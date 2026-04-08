@@ -10,5 +10,8 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().sayHello());
     }
+    public int multiply(int a, int b) {
+        return a * b;
+    }
 
 }

@@ -11,5 +11,10 @@ public class AppTest {
 	    App app = new App();
 	    assertEquals(10, app.sum(5, 5)); // We are testing if 5 + 5 equals 10
 	}
+	
+	@Test
+	public void testMultiply() {
+	    assertEquals(20, new App().multiply(4, 5));
+	}
 
 }
