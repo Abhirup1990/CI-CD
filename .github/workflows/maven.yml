@@ -3,8 +3,7 @@ name: Java CI with Maven
 on:
   push:
     branches: [ "main" ] # Runs CI (Test/Build) every time you push code to 'main'.
-    tags: [ 'v*' ]       # Runs CD (Release) only when you create a version tag like 'v1.0'.
-	
+    tags: [ 'v*' ]       # Runs CD (Release) only when you create a version tag like 'v1.0'.	
 jobs:
   build:
     runs-on: ubuntu-latest # Borrow a fresh Linux computer from GitHub.
