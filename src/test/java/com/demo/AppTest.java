@@ -16,5 +16,13 @@ public class AppTest {
 	public void testMultiply() {
 	    assertEquals(20, new App().multiply(4, 5));
 	}
+	
+	// Add this to your AppTest.java
+	@Test
+	public void testSubtract() {
+	    App app = new App();
+	    // This checks if the subtract method correctly returns 6
+	    assertEquals(6, app.subtract(10, 4));
+	}
 
 }

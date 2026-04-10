@@ -13,5 +13,10 @@ public class App {
     public int multiply(int a, int b) {
         return a * b;
     }
+    
+ // Add this inside the public class App { ... }
+    public int subtract(int a, int b) {
+        return a - b;
+    }
 
 }
