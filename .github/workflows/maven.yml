@@ -18,8 +18,7 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven # Remembers your downloads to make the next run faster.
-		
+        cache: maven # Remembers your downloads to make the next run faster.		
     - name: Build with Maven
       run: mvn -B package # Step 3: Compile code, run tests, and create a .jar file.
 #for Creating release tag automatially
