@@ -1,20 +1,35 @@
 name: Java CI with Maven
 
-on: [push] # Tells GitHub to run this every time you save code
-
+on:
+  push:
+    branches: [ "main" ] # Runs CI (Test/Build) every time you push code to 'main'.
+    tags: [ 'v*' ]       # Runs CD (Release) only when you create a version tag like 'v1.0'.
+	
 jobs:
   build:
-    runs-on: ubuntu-latest # Gives you a clean virtual computer
+    runs-on: ubuntu-latest # Borrow a fresh Linux computer from GitHub.
+    permissions:
+      contents: write # Permission to create the "Release" page and upload files.
 
     steps:
-    - uses: actions/checkout@v4 # Step 1: Grabs your code from GitHub
+    - uses: actions/checkout@v4 # Step 1: Copy your code onto the Linux computer.
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v4 # Step 2: Installs Java
+      uses: actions/setup-java@v4 # Step 2: Install Java 17.
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven
-
+        cache: maven # Remembers your downloads to make the next run faster.
+		
     - name: Build with Maven
-      run: mvn -B package # Step 3: Compiles your code and runs your JUnit tests
+      run: mvn -B package # Step 3: Compile code, run tests, and create a .jar file.
+#for Creating release tag automatially
+    - name: Create GitHub Release
+      if: startsWith(github.ref, 'refs/tags/') # Only do this if we created a Version Tag.
+      uses: softprops/action-gh-release@v2
+      with:
+        files: target/*.jar # Upload the actual app (the .jar file).
+        generate_release_notes: true # Write a summary of what changed.
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the automatic security key.
+
