@@ -24,5 +24,12 @@ public class AppTest {
 	    // This checks if the subtract method correctly returns 6
 	    assertEquals(6, app.subtract(10, 4));
 	}
+	
+	@Test
+	public void testDivide() {
+	    App app = new App();
+	    assertEquals(5, app.divide(10, 2));
+	}
+
 
 }
