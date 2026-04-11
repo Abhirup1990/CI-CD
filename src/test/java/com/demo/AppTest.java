@@ -30,6 +30,13 @@ public class AppTest {
 	    App app = new App();
 	    assertEquals(5, app.divide(10, 2));
 	}
+	
+	@Test
+	public void testHelloGitHub() {
+	    App app = new App();
+	    assertEquals("Hello GitHub Actions!", app.helloGitHub());
+	}
+
 
 
 }

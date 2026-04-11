@@ -25,6 +25,10 @@ public class App {
         }
         return a / b;
     }
+    public String helloGitHub() {
+        return "Hello GitHub Actions!";
+    }
+
 
 
 }
