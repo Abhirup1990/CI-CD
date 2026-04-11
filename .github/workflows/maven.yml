@@ -2,7 +2,7 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ] # Runs CI (Test/Build) every time you push code to 'main'.
+    branches: [ "*" ] # Runs CI (Test/Build) every time you push code to 'main'.
     tags: [ 'v*' ]       # Runs CD (Release) only when you create a version tag like 'v1.0'.	
 jobs:
   build:
