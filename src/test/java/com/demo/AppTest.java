@@ -28,7 +28,7 @@ public class AppTest {
 	@Test
 	public void testDivide() {
 	    App app = new App();
-	    assertEquals(6, app.divide(10, 2));
+	    assertEquals(5, app.divide(10, 2));
 	}
 
 
